@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e5e3df" />
+    <meta name="description"
+        content="Learn about PepperStack — a modern technology company killing legacy software with lightning-fast interfaces and agentic AI." />
+    <title>About Us | PepperStack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/logopepper.png">
+    <style>
+        /* ── Reset ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e3df;
+            color: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ═══════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════ */
+        .navbar {
+            background-color: #e5e3df;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 48px 18px 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 100%;
+            z-index: 100;
+            transition: background-color 0.4s ease;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+        }
+
+        .logo-text.stack {
+            color: var(--accent);
+        }
+
+        /* Nav links container - pill shape */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: #ffffff;
+            border-radius: 50px;
+            padding: 12px 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a1a1a;
+            padding: 6px 18px;
+            border-radius: 30px;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            background: #f0f0f0;
+            color: #000;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .logo-text {
+            font-size: 22px;
+            color: #000;
+            letter-spacing: -0.5px;
+            transition: color 0.4s ease;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff !important;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 15px;
+            transition: background 0.4s ease;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: #222;
+        }
+
+        /* ═══════════════════════════════════
+       SECTION 1: HERO — THE GRAND VISION
+       ═══════════════════════════════════ */
+        .about-hero {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-hero-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 0, 0, 0.06);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+        }
+
+        .about-hero-heading {
+            font-size: clamp(2.8rem, 7vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: #000;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+        }
+
+        .about-hero-sub {
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            font-weight: 400;
+            line-height: 1.7;
+            color: #444;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ═══════════════════════════════════
+       SECTION 2: OUR STORY — THE WHY
+       ═══════════════════════════════════ */
+        .story-section {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 10rem 5%;
+            border-top-left-radius: 80px;
+            border-top-right-radius: 80px;
+            position: relative;
+            z-index: 2;
+            margin-top: -60px;
+        }
+
+        .story-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 6rem;
+        }
+
+        .story-left {
+            flex: 1 1 55%;
+            max-width: 55%;
+        }
+
+        .story-right {
+            flex: 1 1 40%;
+            max-width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #888;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-heading {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+
+        .story-text {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .story-pivot {
+            padding-left: 1.5rem;
+            border-left: 3px solid rgba(241, 59, 59, 0.6);
+        }
+
+        .story-pivot-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #f13b3b;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .story-pivot-text {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #d0d0d0;
+            font-weight: 400;
+        }
+
+        /* Tech Graphic — Abstract */
+        .tech-graphic {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1/1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            animation: rotateRing 25s linear infinite;
+        }
+
+        .tech-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tech-ring:nth-child(2) {
+            width: 75%;
+            height: 75%;
+            border-color: rgba(255, 255, 255, 0.12);
+            animation-duration: 18s;
+            animation-direction: reverse;
+        }
+
+        .tech-ring:nth-child(3) {
+            width: 50%;
+            height: 50%;
+            border-color: rgba(241, 59, 59, 0.2);
+            animation-duration: 12s;
+        }
+
+        .tech-ring:nth-child(4) {
+            width: 25%;
+            height: 25%;
+            border-color: rgba(241, 59, 59, 0.4);
+            animation-duration: 8s;
+            animation-direction: reverse;
+        }
+
+        .tech-ring::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(241, 59, 59, 0.8);
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px rgba(241, 59, 59, 0.5);
+        }
+
+        .tech-ring:nth-child(2)::after {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+            width: 6px;
+            height: 6px;
+        }
+
+        .tech-ring:nth-child(3)::after {
+            width: 5px;
+            height: 5px;
+        }
+
+        .tech-ring:nth-child(4)::after {
+            width: 4px;
+            height: 4px;
+        }
+
+        .tech-core {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(241, 59, 59, 0.9), rgba(241, 59, 59, 0.2));
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 40px rgba(241, 59, 59, 0.4);
+            animation: pulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes rotateRing {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 30px rgba(241, 59, 59, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 60px rgba(241, 59, 59, 0.6);
+            }
+        }
+
+        /* ═══════════════════════════════════
+       SECTION 4: OUR FIRST REVOLUTION
+       ═══════════════════════════════════ */
+        .revolution-section {
+            width: 100%;
+            background: #000;
+            padding: 0 5% 10rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .revolution-card {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a00 0%, #2a2a00 50%, #1a1a00 100%);
+            border: 1px solid rgba(255, 234, 0, 0.15);
+            border-radius: 32px;
+            padding: 6rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .revolution-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255, 234, 0, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .revolution-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .revolution-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #ffea00;
+            margin-bottom: 1.5rem;
+        }
+
+        .revolution-heading {
+            font-size: clamp(2.2rem, 4.5vw, 4rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .revolution-heading span {
+            color: #ffea00;
+        }
+
+        .revolution-text {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #b0b0a0;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .revolution-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: #ffea00;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+        }
+
+        .revolution-btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 234, 0, 0.3);
+        }
+
+        .revolution-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .revolution-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ═══════════════════════════════════
+       SECTION 5: CTA (DARK)
+       ═══════════════════════════════════ */
+        .cta-section {
+            width: 100%;
+            background: #000;
+            padding: 8rem 5%;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-heading {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 1.8rem;
+        }
+
+        .cta-sub {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.7;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            background: #fff;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* ═══════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════ */
+        .footer {
+            background-color: #000;
+            padding: 0 5% 3rem;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand {
+            width: 100%;
+            margin: 2rem 0 3rem;
+            padding: 0;
+        }
+
+        .footer-brand h1 {
+            font-size: 15vw;
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            line-height: 0.75;
+            color: rgba(255, 255, 255, 0.06);
+            text-align: center;
+            white-space: nowrap;
+            display: block;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+        }
+
+        .footer-small-logo {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: #fff;
+        }
+
+        /* ═══════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════ */
+        @media (max-width: 992px) {
+            .story-container {
+                flex-direction: column;
+                gap: 4rem;
+            }
+
+            .story-left,
+            .story-right {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .tech-graphic {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .revolution-card {
+                padding: 4rem 5%;
+            }
+
+            .navbar {
+                padding: 16px 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: auto;
+                padding: 14px 16px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            .nav-cta {
+                padding: 10px 18px;
+                font-size: 13px;
+                border-radius: 10px;
+            }
+
+            .about-hero {
+                min-height: auto;
+                padding: 110px 5% 60px;
+            }
+
+            .story-section {
+                padding: 6rem 5%;
+                border-radius: 40px 40px 0 0;
+            }
+
+            .story-heading {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .story-text,
+            .story-pivot-text {
+                font-size: 0.95rem;
+            }
+
+            .revolution-card {
+                border-radius: 20px;
+                padding: 3rem 6%;
+            }
+
+            .revolution-heading {
+                font-size: clamp(1.8rem, 7vw, 2.8rem);
+            }
+
+            .cta-section {
+                padding: 5rem 5%;
+            }
+
+            .footer-brand h1 {
+                font-size: clamp(2.5rem, 14vw, 5rem);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .about-hero-heading {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+
+            .about-hero-sub {
+                font-size: 0.9rem;
+            }
+
+            .navbar {
+                padding: 12px 12px;
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logo-text {
+                font-size: 15px;
+            }
+
+            .nav-cta {
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+
+            .story-section {
+                padding: 4rem 5%;
+                border-radius: 24px 24px 0 0;
+            }
+
+            .revolution-card {
+                padding: 2.5rem 5%;
+                border-radius: 16px;
+            }
+
+            .cta-btn-primary,
+            .cta-btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* ── Mission Section ── */
+        .mission-section {
+            width: 100%;
+            background: #000;
+            padding: 10rem 5%;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .mission-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mission-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #f13b3b;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .mission-heading {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 3.5rem;
+            color: #fff;
+        }
+
+        .mission-heading span {
+            color: #f13b3b;
+        }
+
+        .mission-text {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.7;
+            color: #8a99a8;
+            max-width: 850px;
+            margin: 0 auto 5rem;
+            font-weight: 400;
+        }
+
+        .mission-stats {
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            margin-bottom: 6rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-num {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .mission-cta {
+            display: inline-flex;
+            padding: 20px 48px;
+            background: #fff;
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-cta:hover {
+            background: #f13b3b;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(241, 59, 59, 0.25);
+        }
+
+        @media (max-width: 992px) {
+            .mission-stats {
+                gap: 3rem;
+            }
+
+            .mission-section {
+                padding: 7rem 5%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mission-stats {
+                gap: 2rem;
+            }
+
+            .stat-num {
+                font-size: 2.5rem;
+            }
+
+            .mission-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ── Scroll Reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="./assets/logopepper.png" alt="PepperStack Logo" class="logo" />
+            <span class="logo-text">PEPPER</span><span class="logo-text" style="color: rgb(241, 59, 59)">STACK</span>
+        </a>
+        <div class="nav-links">
+            <a href="coming-soon.html">Platform</a>
+            <a href="coming-soon.html">Customers </a>
+            <a href="coming-soon.html">Pricing</a>
+            <a href="coming-soon.html">Company</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <a href="coming-soon.html" class="nav-cta">Schedule a Demo</a>
+    </nav>
+
+    <!-- ═══ SECTION 1: HERO ═══ -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <div class="about-hero-label">About PepperStack</div>
+            <h1 class="about-hero-heading">WE BUILD SOFTWARE FOR THE REAL WORLD.</h1>
+            <p class="about-hero-sub">Pepperstack is a modern technology company dedicated to killing legacy software.
+                We bring lightning-fast interfaces, agentic AI, and pure operational leverage to the businesses that
+                actually run the economy.</p>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 2: OUR STORY ═══ -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-left reveal-left">
+                <p class="story-label">Our Story</p>
+                <h2 class="story-heading">THE 1995 PROBLEM.</h2>
+                <p class="story-text">For decades, critical businesses have been forced to run on bloated, slow, and
+                    complex legacy software. We looked at the market and saw chaos: endless training, manual data entry,
+                    and systems that fought against the user instead of helping them.</p>
+
+                <div class="story-pivot">
+                    <p class="story-pivot-label">The Pivot</p>
+                    <p class="story-pivot-text">We founded Pepperstack to change that. We believe that if your staff can
+                        use a smartphone, they should be able to master enterprise software in minutes. We turn daily
+                        data into clarity, control, and profit.</p>
+                </div>
+            </div>
+
+            <div class="story-right reveal">
+                <div class="tech-graphic">
+                    <div class="tech-ring"></div>
+                    <div class="tech-ring"></div>
+                    <div class="tech-ring"></div>
+                    <div class="tech-ring"></div>
+                    <div class="tech-core"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 4: FIRST REVOLUTION ═══ -->
+    <section class="revolution-section">
+        <div class="revolution-card reveal">
+            <div class="revolution-inner">
+                <p class="revolution-label">🚀 Flagship Product</p>
+                <h2 class="revolution-heading">STARTING WITH HEALTHCARE: <span>PROJECT X</span></h2>
+                <p class="revolution-text">We aren't just building theoretical AI. We are deploying it where it matters
+                    most. Our flagship product, currently in stealth (Project X), is completely reimagining pharmacy
+                    management. We are stripping away the paper trails and bringing adaptive AI to the medical counter.
+                </p>
+                <a href="coming-soon.html" class="revolution-btn">
+                    Learn More About Project X
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION: JOIN THE MISSION ═══ -->
+    <section class="mission-section">
+        <div class="mission-container reveal">
+            <p class="mission-label">The North Star</p>
+            <h2 class="mission-heading">WE'RE BUILDING <br><span>THE FUTURE</span> OF WORK.</h2>
+            <p class="mission-text">PepperStack is more than a software company. We are a collective of thinkers,
+                builders, and dreamers dedicated to erasing the friction between human intent and machine execution.
+                No bloated interfaces. No legacy thinking. Just pure operational leverage.</p>
+
+            <div class="mission-stats">
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">AI Native</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">0</span>
+                    <span class="stat-label">Legacy Code</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">∞</span>
+                    <span class="stat-label">Possibilities</span>
+                </div>
+            </div>
+
+            <a href="coming-soon.html" class="mission-cta">Join the Mission</a>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 5: CTA ═══ -->
+    <section class="cta-section">
+        <div class="cta-container reveal">
+            <h2 class="cta-heading">READY TO TRANSFORM HOW GOOD WORK GETS DONE?</h2>
+            <p class="cta-sub">Whether you are an enterprise looking for better tools or a visionary wanting to join our
+                team, the door is open.</p>
+            <div class="cta-buttons">
+                <a href="coming-soon.html" class="cta-btn-primary">Schedule a Demo</a>
+                <a href="coming-soon.html" class="cta-btn-secondary">Contact Leadership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <h1>PEPPERSTACK</h1>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-small-logo">
+                <span>PEPPERSTACK © 2026 | All rights reserved</span>
+            </div>
+            <div class="footer-legal">
+                <a href="about.html">About</a>
+                <a href="coming-soon.html">Solutions</a>
+                <a href="coming-soon.html">Privacy</a>
+                <a href="coming-soon.html">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
